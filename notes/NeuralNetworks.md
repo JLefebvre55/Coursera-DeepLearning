@@ -6,16 +6,16 @@ Chained mathematical functions, organized typically in layers.
 
 ### Weights and Biases
 
-Each neuron's activation `A` is the sum of each neuron's activation in the previous layer `A_i` scaled by some weight vector `w`, plus some bias `B`.
+Each neuron's activation $\Alpha$ is the sum of each neuron's activation in the previous layer $\Alpha$ scaled by some weight vector $\omega$, plus some bias $\Beta$.
 
 $$\Alpha=(\sum_{i=0}^n \omega_i\Alpha_i)+\Beta$$
 
 ## Activation Functions
 
-Activation functions determine how a neuron's activation is 'filtered', i.e. `f(A)`.
+Activation functions determine how a neuron's activation is 'filtered', i.e. $f(A)$.
 
-- **ReLU** (**Re**ctified **L**inear **U**nits): `y = min(0, cx)` where `c` is a scalar;
-- **Sigmoid**: `y = 1/(1 + e^-x)`, slow learning as `|x|>1`; gradient shrinks to zero (solved by ReLU)
+- **ReLU** (**Re**ctified **L**inear **U**nits): $y = \min(0, cx)$ where $c$ is a scalar;
+- **Sigmoid**: $y = 1/(1 + e^{-x})$, slow learning as $|x|\to1$; gradient shrinks to zero (solved by ReLU)
 
 ### Layers
 
@@ -35,7 +35,7 @@ Activation functions determine how a neuron's activation is 'filtered', i.e. `f(
 
 ### Logistic Regression
 
-An algorithm for *binary classification* (output labels `y` are all either 0 or 1). Predictions are 'slider' probabilities, i.e. between 0 and 1, where `y' = sig(Wx+b)`. Sigmoid is used because this allows very large positive or negative numbers to become very close to 1 or 0 respectively.
+An algorithm for *binary classification* (output labels `y` are all either 0 or 1). Predictions are 'slider' probabilities, i.e. between 0 and 1, where $y = \sigma(\Omega x+\Beta)$. Sigmoid is used because this allows very large positive or negative numbers to become very close to 1 or 0 respectively.
 
 ### NN Algorithm Design
 

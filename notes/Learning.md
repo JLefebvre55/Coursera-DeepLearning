@@ -38,11 +38,11 @@ $$ C(w,b)=\frac 1m \sum_{i=0}^n \mathcal{L}(y ^i, \hat y^i)$$
 
 Forward - compute the output
 
-Backward - compute partial derivatives of cost relative to cost and perform gradient descent. This is done via the `chain rule` - how does the output vector change with respect to the final hidden layer's parameters, that layer to the previous, etc.
+Backward - compute partial derivatives of cost relative to cost and perform gradient descent. This is done via the `chain rule` - how does the output vector change with respect to the final hidden layer's parameters, that layer to the previous, etc. See [Gradient Descent](#algorithmsstrategies).
 
 ## Algorithms/Strategies
 
-Gradient Descent: alteration of parameters `w` and `b` to minimize the cost function `C(w,b)` by changing each component of `w|b` according to the partial derivative of `C` with respect to the component.
+**Gradient Descent**: alteration of parameters `w` and `B` to minimize the cost function $C(\omega,\Beta)$ by changing each component of `w|b` according to the partial derivative of `C` with respect to the component.
 ## Supervised Learning
 
 TODO.
