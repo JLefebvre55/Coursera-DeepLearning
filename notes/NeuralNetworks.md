@@ -8,7 +8,7 @@ Chained mathematical functions, organized typically in layers.
 
 Each neuron's activation `A` is the sum of each neuron's activation in the previous layer `A_i` scaled by some weight vector `w`, plus some bias `B`.
 
-![](./src/activation.png)
+$$\Alpha=(\sum_{i=0}^n \omega_i\Alpha_i)+\Beta$$
 
 ## Activation Functions
 

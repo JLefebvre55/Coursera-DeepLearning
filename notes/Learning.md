@@ -4,23 +4,25 @@ Learning is the process by which a neural network _adapts_ to minimize the cost 
 
 ## Loss Functions
 
-Define how poorly a given model fits. A good model has a loss function value approaching zero.
+$$\mathcal{L}(y,\hat y)\text{ where }y\text{ is the output and }\hat y \text{ is the "ground truth label".}$$
 
-For gradient descent, you want there to be one minima *at* the label value. See [Desmos](https://www.desmos.com/calculator/desmzbmxbh).
+Define how poorly a given model fits. A good model has a loss function value *approaching zero*.
+
+For **best** gradient descent, you want there to be `one minima` *at* the label value. See [Desmos](https://www.desmos.com/calculator/desmzbmxbh).
 
 ### Square Error
 
-`L(y,y') = c(y - y')^2` where `c` is a scalar.
+$\mathcal{L}(y,\hat y) = c(y - \hat y)^2$ where $c$ is a scalar.
 
 ### Logistic Regression
 
-`L(y,y') = -(ylog(y') + (1 - y)log(1 - y'))`
+$\mathcal{L}(y,\hat y) = -(y\log(\hat y) + (1 - y)\log(1 - \hat y))$
 
 Reasoning:
 
-For `y = 1`, `L(1,y') = -log(y')`
+$y = 1\to \mathcal{L}(1,\hat y) = -\log(\hat y)$
 
-For `y = 0`, `L(0,y') = -log(1 - y')`
+$y = 0\to \mathcal{L}(0,\hat y) = -\log(1 - \hat y)$
 
 ## Loss Function Design
 
@@ -28,15 +30,15 @@ TODO: Consider convexity and optima
 
 ### Loss vs Cost
 
-Loss is for one training datum and prediction. Cost is the average across all training data, and is applied to the parameters themselves.
+Loss is for one training datum and prediction. Cost is for the model itself, and is applied to the `parameters` (weights and biases) directly.
 
-![](./src/cost.png)
+$$ C(w,b)=\frac 1m \sum_{i=0}^n \mathcal{L}(y ^i, \hat y^i)$$
 
 ## Propagation
 
 Forward - compute the output
 
-Backward - compute partial derivatives and perform gradient descent
+Backward - compute partial derivatives of cost relative to cost and perform gradient descent. This is done via the `chain rule` - how does the output vector change with respect to the final hidden layer's parameters, that layer to the previous, etc.
 
 ## Algorithms/Strategies
 
